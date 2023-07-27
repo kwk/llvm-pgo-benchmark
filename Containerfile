@@ -39,6 +39,8 @@ RUN wget https://github.com/llvm/llvm-project/releases/download/llvmorg-16.0.6/l
      && tar xf llvm-project-16.0.6.src.tar.xz \
      && mv llvm-project-16.0.6.src llvm-project
 
+RUN dnf install -y jq
+
 COPY entrypoint.sh /root/entrypoint.sh
 COPY entrypoint-amalgamation.sh /root/entrypoint-amalgamation.sh
 COPY entrypoint-llvm-test-suite.sh /root/entrypoint-llvm-test-suite.sh
